@@ -1,0 +1,80 @@
+.app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
+  
+  .start-screen {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    gap: 0;
+    border: 5px solid #4a4a4a;
+    background: #fff;
+  }
+  
+  .square {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease;
+  }
+  
+  .square.light {
+    background: #f0d9b5;
+  }
+  
+  .square.dark {
+    background: #b58863;
+  }
+  
+  .square.highlight {
+    background: #ffeb3b !important;
+    animation: pulse 1s infinite;
+  }
+  
+  .piece {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .piece.red {
+    background: radial-gradient(circle, #ff0000, #cc0000);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .piece.black {
+    background: radial-gradient(circle, #333, #000);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .piece.king::after {
+    content: '👑';
+    position: absolute;
+    font-size: 20px;
+  }
+  
+  .piece.selected {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #ffd700;
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+  }
