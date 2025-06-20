@@ -1,1 +1,1 @@
-# proyecto2     C:\checkers-game
+# proyecto2    C:\checkers-game
